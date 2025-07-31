@@ -295,48 +295,54 @@ function App() {
         </div>
       </div>
       
-            <div className="contact-form-container reveal-right" data-reveal-delay="300">
-              <form className="contact-form" onSubmit={(e) => {
-                e.preventDefault();
-                
-                // Coletar dados do formulário
-                const formData = new FormData(e.target);
-                const name = formData.get('name');
-                const email = formData.get('email');
-                const phone = formData.get('phone');
-                const objective = formData.get('objective');
-                const message = formData.get('message');
-                
-                // Mapear objetivos para texto mais legível
-                const objectiveMap = {
-                  'emagrecimento': 'Emagrecimento',
-                  'ganho-massa': 'Ganho de massa muscular',
-                  'condicionamento': 'Condicionamento físico',
-                  'reabilitacao': 'Reabilitação',
-                  'bem-estar': 'Bem-estar geral'
-                };
-                
-                // Criar mensagem formatada
-                const whatsappMessage = `Olá! Gostaria de mais informações sobre os serviços.
+<div className="contact-form-container reveal-right" data-reveal-delay="300">
+ <form className="contact-form" onSubmit={(e) => {
+   e.preventDefault();
+   
+   // Coletar dados do formulário
+   const form = e.currentTarget; // Melhor que e.target para formulários
+   const formData = new FormData(form);
+   
+   // Garantir que todos os valores sejam strings
+   const name = formData.get('name') as string;
+   const email = formData.get('email') as string;
+   const phone = formData.get('phone') as string;
+   const objective = formData.get('objective') as string;
+   const message = formData.get('message') as string;
+   
+   // Mapear objetivos para texto mais legível
+   const objectiveMap = {
+     'emagrecimento': 'Emagrecimento',
+     'ganho-massa': 'Ganho de massa muscular',
+     'condicionamento': 'Condicionamento físico',
+     'reabilitacao': 'Reabilitação',
+     'bem-estar': 'Bem-estar geral'
+   } as const;
+   
+   // Obter texto do objetivo
+   const objectiveText = objectiveMap[objective as keyof typeof objectiveMap] || objective;
+   
+   // Criar mensagem formatada
+   const whatsappMessage = `Olá! Gostaria de mais informações sobre o projeto saúde.
 
-      *Dados para contato:*
-       Nome: ${name}
-       Email: ${email}
-       Telefone: ${phone}
-       Objetivo: ${objectiveMap[objective] || objective}
+*Dados para contato:*
+ Nome: ${name}
+ Email: ${email}
+ Telefone: ${phone}
+ Objetivo: ${objectiveText}
 
-      *Mensagem:*
-      ${message}`;
-                
-                // Codificar a mensagem para URL
-                const encodedMessage = encodeURIComponent(whatsappMessage);
-                
-                // Criar URL do WhatsApp
-                const whatsappURL = `https://wa.me/5591986220244?text=${encodedMessage}`;
-                
-                // Abrir WhatsApp
-                window.open(whatsappURL, '_blank');
-              }}>
+*Mensagem:*
+${message}`;
+   
+   // Codificar a mensagem para URL
+   const encodedMessage = encodeURIComponent(whatsappMessage);
+   
+   // Criar URL do WhatsApp (usando o número correto do projeto)
+   const whatsappURL = `https://wa.me/5591986220244?text=${encodedMessage}`;
+   
+   // Abrir WhatsApp
+   window.open(whatsappURL, '_blank');
+ }}>
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="name" className="form-label">Nome</label>
