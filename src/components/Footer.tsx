@@ -96,48 +96,14 @@ const Footer: React.FC = () => {
               </p>
               <p className="footer-contact-item">
                 <span className="contact-icon phone-icon"></span>
-                (11) 99999-9999
+                (91) 98622-0244
               </p>
               <p className="footer-contact-item">
                 <span className="contact-icon location-icon"></span>
-                São Paulo, Brasil
+                Bragança, Pará
               </p>
             </div>
 
-            {/* Redes Sociais */}
-            <div className="footer-social">
-              <h5 className="footer-social-title">Redes Sociais</h5>
-              <div className="footer-social-links">
-                <a 
-                  href="https://wa.me/5511999999999" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="footer-social-link whatsapp"
-                  aria-label="WhatsApp"
-                >
-                  <span className="social-icon whatsapp-icon"></span>
-                  <span className="social-text">WhatsApp</span>
-                </a>
-                <a 
-                  href="https://linkedin.com/in/matheus-rodrigues" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="footer-social-link linkedin"
-                  aria-label="LinkedIn"
-                >
-                  <span className="social-icon linkedin-icon"></span>
-                  <span className="social-text">LinkedIn</span>
-                </a>
-                <a 
-                  href="mailto:contato@projetosaude.com"
-                  className="footer-social-link email"
-                  aria-label="Email"
-                >
-                  <span className="social-icon email-social-icon"></span>
-                  <span className="social-text">Email</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -183,14 +149,6 @@ const Footer: React.FC = () => {
               por 
               <span className="developer-name">Matheus Rodrigues</span>
             </p>
-          </div>
-
-          <div className="footer-links">
-            <a href="#" className="footer-link">Política de Privacidade</a>
-            <span className="footer-separator">•</span>
-            <a href="#" className="footer-link">Termos de Uso</a>
-            <span className="footer-separator">•</span>
-            <a href="#" className="footer-link">Cookies</a>
           </div>
         </div>
 

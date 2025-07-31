@@ -176,9 +176,6 @@ const Header: React.FC = () => {
           </ul>
           
           <div className="mobile-actions">
-            <button className="btn btn-outline mobile-btn" onClick={closeMenu}>
-              Login
-            </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="btn btn-primary mobile-btn"
