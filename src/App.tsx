@@ -62,7 +62,7 @@ function App() {
               <div className="hero-image reveal-right" data-reveal-delay="300">
                 <div className="hero-image-container">
                   <img 
-                    src="/icon.png" 
+                    src={`${import.meta.env.BASE_URL}icon.png`} 
                     alt="Projeto Saúde - Atividade Física" 
                     className="hero-img"
                   />

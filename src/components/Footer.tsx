@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <img src="/icon.png" alt="Projeto Saúde" className="footer-logo-img" />
+              <img src={`${import.meta.env.BASE_URL}icon.png`} alt="Projeto Saúde" className="footer-logo-img" />
             </div>
             <div className="footer-brand-content">
               <h3 className="footer-title">Projeto Saúde</h3>

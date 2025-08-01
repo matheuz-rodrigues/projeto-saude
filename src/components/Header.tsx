@@ -61,7 +61,7 @@ const Header: React.FC = () => {
           className="header-brand"
         >
           <div className="header-logo">
-            <img src="/icon.png" alt="Projeto Saúde" className="header-logo-img" />
+            <img src={`${import.meta.env.BASE_URL}icon.png`} alt="Projeto Saúde" className="header-logo-img" />
           </div>
           <div className="header-brand-text">
             <h1 className="header-title">Projeto Saúde</h1>
